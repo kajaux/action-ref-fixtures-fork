@@ -1,4 +1,4 @@
-name: Commitish marker B
+name: Commitish marker C
 description: Isolated reference-resolution fixture
 outputs:
   marker:
@@ -7,8 +7,10 @@ outputs:
 runs:
   using: composite
   steps:
+    - uses: kjanat/action-ref-fixtures@nesting-absent
+      if: ${{ false }}
     - id: marker
       shell: bash
       run: |
-        printf '%s\n' 'COMMITISH_MARKER=B'
-        printf '%s\n' 'value=B' >> "$GITHUB_OUTPUT"
+        printf '%s\n' 'COMMITISH_MARKER=C'
+        printf '%s\n' 'value=C' >> "$GITHUB_OUTPUT"

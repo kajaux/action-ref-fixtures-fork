@@ -1,0 +1,11 @@
+name: Nested child probe
+description: Distinguish action source from runner workspace
+outputs:
+  marker:
+    description: Child execution marker
+    value: ${{ steps.child.outputs.marker }}
+runs:
+  using: composite
+  steps:
+    - id: child
+      uses: "./child"

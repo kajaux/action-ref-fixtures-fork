@@ -1,0 +1,19 @@
+name: Nested reference probe
+on:
+  workflow_call:
+    inputs:
+      experiment:
+        type: string
+        required: true
+      case_id:
+        type: string
+        required: true
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  child:
+    uses: "./.github/workflows/nested-dot.yml"
+    with:
+      experiment: ${{ inputs.experiment }}
+      case_id: ${{ inputs.case_id }}
