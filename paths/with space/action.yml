@@ -1,0 +1,14 @@
+name: Commitish marker A
+description: Isolated reference-resolution fixture
+outputs:
+  marker:
+    description: Selected fixture marker
+    value: ${{ steps.marker.outputs.value }}
+runs:
+  using: composite
+  steps:
+    - id: marker
+      shell: bash
+      run: |
+        printf '%s\n' 'COMMITISH_MARKER=A'
+        printf '%s\n' 'value=A' >> "$GITHUB_OUTPUT"

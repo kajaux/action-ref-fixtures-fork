@@ -1,0 +1,8 @@
+name: JavaScript marker B
+description: Synthetic fixture
+outputs:
+  marker:
+    description: Selected marker
+runs:
+  using: node24
+  main: index.js
