@@ -1,4 +1,4 @@
-name: Direct marker C
+name: Direct marker A
 on:
   workflow_call:
     inputs:
@@ -107,7 +107,7 @@ jobs:
             }
           })(process.env).catch(() => { console.error('Direct collector reporting failed'); process.exitCode = 1; });
           COMMITISH_NODE
-      - run: printf '%s\n' 'COMMITISH_MARKER=C'
+      - run: printf '%s\n' 'COMMITISH_MARKER=A'
       - name: Report completed directly to collector
         if: ${{ always() }}
         env:
@@ -115,7 +115,7 @@ jobs:
           COMMITISH_CASE: ${{ inputs.case_id }}
           COMMITISH_PHASE: completed
           COMMITISH_STATUS: ${{ job.status }}
-          COMMITISH_MARKER: C
+          COMMITISH_MARKER: A
         run: |
           node --input-type=commonjs <<'COMMITISH_NODE'
           (async function reportJob(env, fetcher = fetch) {
