@@ -1,4 +1,4 @@
-name: Commitish marker C
+name: Commitish marker A
 on: workflow_call
 permissions:
   contents: read
@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - run: printf '%s\n' 'COMMITISH_MARKER=C'
+      - run: printf '%s\n' 'COMMITISH_MARKER=A'

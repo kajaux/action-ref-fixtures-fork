@@ -1,4 +1,4 @@
-name: Commitish marker C
+name: Commitish marker A
 description: Isolated reference-resolution fixture
 outputs:
   marker:
@@ -10,5 +10,5 @@ runs:
     - id: marker
       shell: bash
       run: |
-        printf '%s\n' 'COMMITISH_MARKER=C'
-        printf '%s\n' 'value=C' >> "$GITHUB_OUTPUT"
+        printf '%s\n' 'COMMITISH_MARKER=A'
+        printf '%s\n' 'value=A' >> "$GITHUB_OUTPUT"
